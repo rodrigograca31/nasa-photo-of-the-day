@@ -10,6 +10,17 @@ import purple from '@material-ui/core/colors/purple';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers/';
 import DateFnsUtils from '@date-io/date-fns';
 import { setDay } from "date-fns";
+import styled from "styled-components"
+
+const Div = styled.div`
+    text-align: center;
+	width: 800px;
+    margin: auto;
+	background: ${props => props.bc};
+	font-size: 4rem;
+	width: ${props => props.width};
+`;
+
 
 const theme = createMuiTheme({
 	palette: {
@@ -61,7 +72,7 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<div className="App">
+			<Div className="App" width="700px" bc="rgba(0, 0, 0, 0.1)">
 				<p>🚀 🚀 🚀</p>
 				<div className="buttons">
 					<Button variant="contained" color="primary" onClick={() => newDate("prev")}>⬅️ Prev Dat</Button>
@@ -87,7 +98,7 @@ function App() {
 				{
 					JSON.stringify(APOD) !== "{}" && <APODComp setAPOD={setAPOD} data={APOD} />
 				}
-			</div>
+			</Div>
 		</ThemeProvider>
 	);
 }

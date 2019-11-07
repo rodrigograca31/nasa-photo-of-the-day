@@ -1,5 +1,13 @@
 import React from "react";
 import "./APOD.scss";
+import styled from 'styled-components';
+
+const Div = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 const APODComp = (props) => {
 
@@ -26,12 +34,12 @@ const APODComp = (props) => {
 			{/* {JSON.stringify(props.data)} */}
 			<h1>{props.data.title}</h1>
 			{/* I should deal with 'media_types' but Im lazy */}
-			<div>
-				<div className="spinner">
+			<Div>
+				<Div className="spinner">
 					{loading && <img src="./imgs/spinner.png" alt="" />}
-				</div>
+				</Div>
 				<img src={props.data.hdurl} alt={props.data.title} onLoad={() => { finishedLoading() }} />
-			</div>
+			</Div>
 			<p>{props.data.explanation.slice(0, 200)}......</p>
 		</div>
 	);

@@ -1,22 +1,16 @@
 .App {
-    text-align: center;
-
     button {
         font-size: 0.8rem;
         font-weight: bold;
         // background: red;
-    }
-
-    width: 800px;
-    margin: auto;
-	background: rgba(0, 0, 0, 0.1);
-	font-size: 4rem;
-
+	}
+	
     .buttons {
         display: flex;
         justify-content: space-between;
-    }
-
+	}
+	
+	padding: 20px;;
 }
 
 .App-logo {
