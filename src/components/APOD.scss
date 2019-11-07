@@ -1,7 +1,43 @@
 #data {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 
-	img {
-		width: 500px;
-	}
+    img {
+        height: 500px;
+    }
+
+    div {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .spinner {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+
+        img {
+			height: 50px;
+			
+			-webkit-animation-name: you-spin-me-round;
+			-webkit-animation-duration: 1s;
+			animation-name: you-spin-me-round;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+        }
+    }
+}
+
+
+@keyframes you-spin-me-round {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
